@@ -30,9 +30,6 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-// addBookToLibrary("Harry", "Jake", 300, true);
-// addBookToLibrary("Marry", "Moving", 200, false);
-
 
 
 newBookButton.addEventListener("click", () => {
@@ -56,7 +53,6 @@ addBookButton.addEventListener("click", (e) => {
             else read = false;
         }
     }
-    console.log(read);
 
     addBookToLibrary(inputTitle.value, inputAuthor.value, inputPages.value, read);
 
@@ -90,13 +86,12 @@ addBookButton.addEventListener("click", (e) => {
 
     bookDisplayContainer.addEventListener("click", (event) =>{
         target = event.target;
-        console.log(target);
 
         if(target.id === "remove-button"){
             let bookToBeRemoved = target.getAttribute("data-id");
             
             for(let child of grid.children){
-                console.log(child.getAttribute("data-id"));
+                
                 if(child.getAttribute("data-id") === bookToBeRemoved){
                     grid.removeChild(child);
                 }
